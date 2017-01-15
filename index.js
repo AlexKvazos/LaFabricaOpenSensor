@@ -3,7 +3,7 @@ var io = require('socket.io-client');
 board = new j5.Board();
 var previousValue = 0;
 
-const socket = io('192.168.0.100');
+const socket = io(process.env.API_HOST);
 
 /**
  * Send a request to the server to mark La Fábrica as Open
