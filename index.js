@@ -1,13 +1,16 @@
 var j5 = require('johnny-five');
-var agen = require('superagent');
+var io = require('socket.io-client');
 board = new j5.Board();
 var previousValue = 0;
+
+const socket = io('192.168.0.100');
 
 /**
  * Send a request to the server to mark La Fábrica as Open
  */
 function setOpen() {
   console.log('La fábrica is open');
+  socket.emit('update', true);
 }
 
 /**
@@ -15,6 +18,7 @@ function setOpen() {
  */
 function setClosed() {
 console.log('La fábrica is closed');
+socket.emit('update', false);
 }
 
 /**
