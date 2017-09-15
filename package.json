@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "johnny-five": "^0.10.6",
-    "socket.io-client": "^1.7.3"
+    "superagent": "^3.6.0"
   },
   "devDependencies": {},
   "scripts": {
